@@ -3,11 +3,12 @@ date = '2025-06-04T15:25:48+08:00'
 draft = false
 title = 'SCP传输命令的基本使用'
 categories = [
-	"linux"
+	"技术"
 ]
 
 tags = [
-	"scp"
+	"Linux",
+	"SCP"
 ]
 +++
 

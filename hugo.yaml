@@ -56,7 +56,7 @@ params:
 
     footer:
         since: 2015
-        customText:
+        customText: <span> <span>备案号：</span> <a class="author-url" href="http://beian.miit.gov.cn/" target="_blank"> 蒙ICP备18003023号-5 </a> </span>
 
     dateFormat:
         published: Jan 02, 2006
