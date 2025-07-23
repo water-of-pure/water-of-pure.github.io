@@ -20,7 +20,7 @@
 23: "/2025/07/22/flask-之-gunicorn启动应用程序/",
 24: "/2025/07/22/centos-系统下运行python项目出现_sqlite3的错误解决办法/",
 25: "/2025/07/22/scrapy-遇到-filtered-duplicate-request-结束运行/",
-26: "/2025/07/22/python-json-loads-fails-with-valueerror-invalid-control-character-at-line-1-column-33-char-33/",
+26: "/2025/07/22/python-json.loads-fails-with-valueerror-invalid-control-character-at-line-1-column-33-char-33/",
 27: "/2025/07/22/禁止在iphone或者ipad上双击或者单击页面/",
 28: "/2025/07/22/python-入门基础知识-入门简介/",
 29: "/2025/07/22/python-入门基础知识-输入输出/",
