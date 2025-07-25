@@ -11,6 +11,7 @@ tags = [
     "Scrapy",
     "Python"
 ]
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1595249147/walkerfree/scrypt.jpg"
 +++
 
 今天在使用scrapy做数据抓取，抓取的过程中，突然就停止了。看了下最终的结果
