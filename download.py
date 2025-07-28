@@ -398,7 +398,7 @@ class WebPageAnalyzer:
         if categories is None:
             categories = ["技术"]
         if tags is None:
-            tags = ["PHP"]
+            tags = ["Python"]
             
         # 获取当前时间并设置时区为东八区
         current_time = datetime.now(ZoneInfo('Asia/Shanghai')).isoformat()
