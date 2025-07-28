@@ -64,4 +64,4 @@ while True:  # main game loop
 
 运行结果如下
 
-![Image](https://durban-space1.b0.upaiyun.com/up/118-1.png)
+![Image](https://cdn.xiaorongmao.com/up/118-1.png)

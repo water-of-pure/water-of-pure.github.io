@@ -31,7 +31,7 @@ tags = [
 
 7、同样的对数据15和30进行处理，最终形成如下图的树
 
-![Image](https://durban-space1.b0.upaiyun.com/up/109-1.png)
+![Image](https://cdn.xiaorongmao.com/up/109-1.png)
 
 当树创建好后，对树进行中序遍历后的结果就是对数据从小到大的排序。如果要从大到小进行排序，则可以先从右子树开始进行中序遍历。
 

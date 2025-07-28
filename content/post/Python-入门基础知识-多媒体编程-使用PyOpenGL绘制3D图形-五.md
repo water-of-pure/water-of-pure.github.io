@@ -11,6 +11,8 @@ tags = [
     "Python",
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560389330/walkerfree/117-1.png"
 +++
 
 **纹理映射**
