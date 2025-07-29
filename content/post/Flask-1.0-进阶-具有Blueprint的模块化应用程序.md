@@ -12,6 +12,8 @@ tags = [
     "Flask",
     "Blueprint"
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 ## 具有Blueprint的模块化应用程序

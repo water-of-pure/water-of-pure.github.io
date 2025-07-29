@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 Flask 1.0使用过程中遇到“AttributeError: 'DispatcherMiddleware' object has no attribute 'config'”，官方的文档暂时还没更新，这里经过资料搜集，暂时有了一个可使用的解决方案。

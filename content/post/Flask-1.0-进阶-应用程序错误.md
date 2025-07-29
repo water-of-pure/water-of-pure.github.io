@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 应用程序失败，服务器失败迟早你会看到生产中的例外情况。即使您的代码100％正确，您仍会不时看到异常。为什么？因为所涉及的一切都会失败。以下是一些完美的代码可能导致服务器错误的情况：

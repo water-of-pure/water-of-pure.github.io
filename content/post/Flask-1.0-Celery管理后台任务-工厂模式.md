@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 管理后台任务，在许多项目中都是必不可少的，Flask的文档中推荐的Celery，但是官方文档简单介绍了非工厂模式的使用方式，简单的介绍了使用方法，但是对于使用工厂模式创建应用的我来说，完全达不到我使用的目的，根本不完美

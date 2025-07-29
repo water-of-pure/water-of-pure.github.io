@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 "未经测试的东西被打破了"

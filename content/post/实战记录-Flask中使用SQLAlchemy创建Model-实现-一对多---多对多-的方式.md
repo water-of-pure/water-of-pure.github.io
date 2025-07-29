@@ -13,6 +13,8 @@ tags = [
     "SQLAlchemy"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 Flask中使用SQLAlchemy创建Model，实现“一对多”、“多对多”的方式

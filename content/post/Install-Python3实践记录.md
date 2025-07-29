@@ -11,6 +11,8 @@ tags = [
     "Python3",
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1565854753/walkerfree/python.jpg"
 +++
 
 2019年了，在使用python2的时候，偶尔会发现python2将被deprecated，将被弃用了。那么为了能够使用新的包，跟着大众的步伐，安装python3是个不可以少的环节了。下面记录下我的安装以及使用python3的一些记录。

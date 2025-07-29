@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 Flask使用标准的Python日志记录。所有与Flask相关的消息都记录在'flask'记录器命名空间下。Flask.logger返回名为“flask.app”的记录器，可用于记录应用程序的消息。

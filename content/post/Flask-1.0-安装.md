@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1555568104/walkerfree/wf_146.jpg"
 +++
 
 ## Python版本要求

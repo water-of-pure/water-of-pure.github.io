@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/c_scale,w_520/v1554886328/walkerfree/wf_41.jpg"
 +++
 
 Flask 1.0 开始支持Python3啦，一直在使用Flask构建自己的博客，今天重温看了下Flask1.0，感觉还是有很多优点的，随后根据官网的教程搞了一个简易的小博客，整体使用下来，还算是比较轻便的。唯独在部署上不是那么的轻松，但是经过查询也算是找到了解决办法，跟之前的Flask版本不同的是，我这次想试下Gunicorn+Nginx+Supervisor。

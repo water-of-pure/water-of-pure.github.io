@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 应用程序上下文在请求，CLI命令或其他活动期间跟踪应用程序级数据。而不是将应用程序传递给每个函数，而是访问[**current\_app**](https://flask.palletsprojects.com/en/1.0.x/api/#flask.current_app) 和[**g**](https://flask.palletsprojects.com/en/1.0.x/api/#flask.g) 代理。

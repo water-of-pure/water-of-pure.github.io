@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 你已经通过此教程学了一部分关于Flask和Python的概念。返回去再重新看下新手教程一步一步对比下你的代码，将您的项目与[示例项目](https://github.com/pallets/flask/tree/1.0.2/examples/tutorial)进行比较，由于本教程的逐步特性，该项目可能看起来有点不同

@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1556417065/walkerfree/wf_148.jpg"
 +++
 
 ## 静态文件

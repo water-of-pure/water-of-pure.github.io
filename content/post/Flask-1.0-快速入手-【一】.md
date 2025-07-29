@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1556014814/walkerfree/wf_147.jpg"
 +++
 
 是不是已经很想快点尝试下Flask了，本次分享将尽量全面的介绍Flask，继续下面的内容之前请确保您已经安装了Flask，如果你还没有安装的话，请回到前面的部分“Flask 1.0安装”再了解下如何安装。

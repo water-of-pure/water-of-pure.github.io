@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 Flask利用Jinja2作为模板引擎。你显然可以自由使用不同的模板引擎，但你仍然需要安装Jinja2来运行Flask本身。此要求是启用丰富扩展所必需的。扩展可以依赖于Jinja2存在。

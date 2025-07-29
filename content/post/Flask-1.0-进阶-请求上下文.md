@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 请求上下文在请求期间跟踪请求级数据。而不是将请求对象传递给在请求期间运行的每个函数，而是访问 [**request**](https://flask.palletsprojects.com/en/1.0.x/api/#flask.request) 和 [**会话**](https://flask.palletsprojects.com/en/1.0.x/api/#flask.session) 代理。

@@ -11,6 +11,8 @@ tags = [
     "Python",
     "Flask"
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 Flask 0.7引入了可插拔视图，其灵感来自Django的通用视图，它们基于类而不是函数。主要目的是您可以替换部分实现，这种方式具有可自定义的可插拔视图。

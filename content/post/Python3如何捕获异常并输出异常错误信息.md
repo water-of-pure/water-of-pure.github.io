@@ -11,6 +11,8 @@ tags = [
     "Python3",
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1565854753/walkerfree/python.jpg"
 +++
 
 最近在Python3环境中使用Flask，写代码的过程中，遇到一个捕获异常的代码

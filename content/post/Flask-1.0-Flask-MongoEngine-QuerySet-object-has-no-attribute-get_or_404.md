@@ -14,6 +14,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 学习Flask 1.0中使用“flask-mongoengine==0.9.5”，遇到类似“ AttributeError: 'QuerySet' object has no attribute 'first\_or\_404'”这个错误

@@ -12,6 +12,8 @@ tags = [
     "Spring-Boot"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/c_scale,w_520/v1532044102/walkerfree/walkerfree_1.jpg"
 +++
 
 继续上篇文章，来完善下如果使用Facebook注册一个应用  

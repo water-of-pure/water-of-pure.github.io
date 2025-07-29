@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 从Flask 0.6开始，Flask中集成了对信号的支持。这种支持由优秀的 [blinker](https://pypi.org/project/blinker/) 库提供，如果不可用，将优雅地退回。

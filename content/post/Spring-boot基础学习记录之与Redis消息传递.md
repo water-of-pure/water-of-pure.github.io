@@ -12,6 +12,8 @@ tags = [
     "Spring-Boot"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1537517093/walkerfree/wf_2.jpg"
 +++
 
 ## **与Redis消息传递(Messaging with Redis)**

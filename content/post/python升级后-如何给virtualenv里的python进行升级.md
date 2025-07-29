@@ -11,6 +11,8 @@ tags = [
     "Python",
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1565854753/walkerfree/python.jpg"
 +++
 
 > 如题：virtualenv的python版本是3.6.4，现在装了3.7.4，如何将virtualenv里的版本也更新到3.7.4呢？如果是3.6，那么这种跨大版本的又该如何升级到3.7呢？

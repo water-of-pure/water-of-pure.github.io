@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1560310227/walkerfree/flask.png"
 +++
 
 应用程序需要某种配置。您可能希望更改不同的设置，具体取决于应用程序环境，例如切换调试模式，设置密钥以及其他此类特定于环境的内容。

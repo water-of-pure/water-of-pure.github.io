@@ -12,6 +12,8 @@ tags = [
     "Flask"
 
 ]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1558062562/walkerfree/wf_150.jpg"
 +++
 
 ## Sessions
