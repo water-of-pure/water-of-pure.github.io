@@ -1,0 +1,47 @@
++++
+date = '2025-07-30T09:56:56.339292+08:00'
+draft = false
+title = 'Python2 urllib2 与 Python3 urllib.request API对照'
+categories = [
+    "技术",
+
+]
+
+tags = [
+    "Python",
+    "urllib"
+]
+
+image = "https://res.cloudinary.com/dy5dvcuc1/image/upload/v1565854753/walkerfree/python.jpg"
++++
+
+Python2 urllib2 与 Python3 urllib.request API对照
+
+| python2 | python3 |
+| --- | --- |
+| urllib2.urlopen() | urllib.request.urlopen() |
+| urllib2.install\_opener() | urllib.request.install\_opener() |
+| urllib2.build\_opener() | urllib.request.build\_opener() |
+| urllib2.URLError | urllib.error.URLError |
+| urllib2.HTTPError | urllib.error.HTTPError |
+| urllib2.Request | urllib.request.Request |
+| urllib2.OpenerDirector | urllib.request.OpenerDirector |
+| urllib2.BaseHandler | urllib.request.BaseHandler |
+| urllib2.HTTPDefaultErrorHandler | urllib.request.HTTPDefaultErrorHandler |
+| urllib2.HTTPRedirectHandler | urllib.request.HTTPRedirectHandler |
+| urllib2.HTTPCookieProcessor | urllib.request.HTTPCookieProcessor |
+| urllib2.ProxyHandler | urllib.request.ProxyHandler |
+| urllib2.HTTPPasswordMgr | urllib.request.HTTPPasswordMgr |
+| urllib2.HTTPPasswordMgrWithDefaultRealm | urllib.request.HTTPPasswordMgrWithDefaultRealm |
+| urllib2.AbstractBasicAuthHandler | urllib.request.AbstractBasicAuthHandler |
+| urllib2.HTTPBasicAuthHandler | urllib.request.HTTPBasicAuthHandler |
+| urllib2.ProxyBasicAuthHandler | urllib.request.ProxyBasicAuthHandler |
+| urllib2.AbstractDigestAuthHandler | urllib.request.AbstractDigestAuthHandler |
+| urllib2.HTTPDigestAuthHandler | urllib.request.HTTPDigestAuthHandler |
+| urllib2.ProxyDigestAuthHandler | urllib.request.ProxyDigestAuthHandler |
+| urllib2.HTTPHandler | urllib.request.HTTPHandler |
+| urllib2.HTTPSHandler | urllib.request.HTTPSHandler |
+| urllib2.FileHandler | urllib.request.FileHandler |
+| urllib2.FTPHandler | urllib.request.FTPHandler |
+| urllib2.CacheFTPHandler | urllib.request.CacheFTPHandler |
+| urllib2.UnknownHandler | urllib.request.UnknownHandler |
