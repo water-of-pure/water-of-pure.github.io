@@ -28,6 +28,7 @@ class WebPageAnalyzer:
         # 设置默认配置
         self.default_config = {
             'target_class': 'entry-content',
+            'post_class': 'post type-post status-publish format-standard has-post-thumbnail hentry category-media-2 tag-content-2 tag-embeds-2 tag-media tag-twitter-2',
             'output_dir': './content/post',
             'preserve_code_language': True,
             'add_front_matter': True,
@@ -42,7 +43,7 @@ class WebPageAnalyzer:
         }
         
         # 合并用户配置和默认配置
-        self.config = {**self.default_config, **self.config}
+        self.config = {** self.default_config, **self.config}
     
     def fetch_page(self) -> bool:
         """获取网页内容并解析"""
@@ -385,15 +386,79 @@ class WebPageAnalyzer:
         
         # 如果标题为空，返回默认值
         return cleaned_title if cleaned_title else "未命名文章"
+    
+    def get_cover_image(self) -> Optional[str]:
+        """
+        获取封面图片URL
+        
+        在class为配置中指定的post_class的元素中查找图片
+        """
+        if not self.soup:
+            self.logger.error("错误：页面未加载，无法获取封面图片")
+            return None
+            
+        try:
+            # 查找指定class的文章容器元素
+            post_elements = self.soup.find_all(class_=self.config['post_class'])
+            
+            if not post_elements:
+                self.logger.warning(f"未找到class为 '{self.config['post_class']}' 的元素")
+                return None
+                
+            # 从第一个找到的文章元素中查找图片
+            post_element = post_elements[0]
+            
+            # 尝试多种方式查找图片
+            img_elements = []
+            
+            # 1. 查找thumbnail相关图片
+            thumbnail = post_element.find(class_='wp-post-image')
+            if thumbnail:
+                img_elements.append(thumbnail)
+            
+            # 2. 查找所有img标签
+            if not img_elements:
+                img_elements = post_element.find_all('img')
+            
+            # 3. 查找背景图片样式
+            if not img_elements:
+                bg_image_elements = post_element.find_all(style=re.compile(r'background-image'))
+                for el in bg_image_elements:
+                    style = el.get('style', '')
+                    match = re.search(r'url\(["\']?([^"\')]+)["\']?\)', style)
+                    if match:
+                        return match.group(1)
+            
+            # 提取第一个找到的图片的URL
+            if img_elements:
+                img_url = img_elements[0].get('src')
+                if img_url:
+                    # 处理相对URL
+                    if img_url.startswith(('//', '/')):
+                        from urllib.parse import urlparse
+                        parsed_url = urlparse(self.url)
+                        base_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
+                        img_url = base_url + img_url if img_url.startswith('/') else f"{parsed_url.scheme}:{img_url}"
+                    
+                    self.logger.info(f"找到封面图片: {img_url}")
+                    return img_url
+                    
+            self.logger.warning("在文章元素中未找到图片")
+            return None
+            
+        except Exception as e:
+            self.logger.error(f"获取封面图片时出错: {e}")
+            return None
 
     def generate_front_matter(self, title: str, categories: Optional[List[str]] = None, 
-                              tags: Optional[List[str]] = None) -> str:
+                              tags: Optional[List[str]] = None, image: Optional[str] = None) -> str:
         """生成Markdown文件的前置元数据
         
         Args:
             title: 文章标题
             categories: 文章分类列表
             tags: 文章标签列表
+            image: 封面图片URL
         """
         if categories is None:
             categories = ["技术"]
@@ -407,7 +472,12 @@ class WebPageAnalyzer:
 date = '{current_time}'
 draft = false
 title = '{title}'
-categories = [
+"""
+        # 添加图片信息（如果存在）
+        if image:
+            front_matter += f"image = '{image}'\n"
+            
+        front_matter += f"""categories = [
 {"".join([f'    "{cat}",\n' for cat in categories])}
 ]
 
@@ -457,12 +527,13 @@ tags = [
             
         return cleaned_content
 
-    def save_markdown_to_file(self, markdown_content: str, file_path: str) -> bool:
+    def save_markdown_to_file(self, markdown_content: str, file_path: str, image: Optional[str] = None) -> bool:
         """将Markdown内容保存到文件
         
         Args:
             markdown_content: 要保存的Markdown内容
             file_path: 保存文件的路径
+            image: 封面图片URL
         """
         if not markdown_content:
             self.logger.error("错误：没有Markdown内容可保存")
@@ -480,8 +551,8 @@ tags = [
                 page_title = self.get_title()
                 # 规范化标题
                 page_title = self.replace_keywords(page_title)
-                # 生成前置元数据
-                front_matter = self.generate_front_matter(title=page_title)
+                # 生成前置元数据，包含图片信息
+                front_matter = self.generate_front_matter(title=page_title, image=image)
                 # 合并前置元数据和Markdown内容
                 content_to_save = front_matter + "\n" + markdown_content
             else:
@@ -511,6 +582,9 @@ def main():
     # 添加可选参数
     parser.add_argument('--target-class', type=str, default='entry-content', 
                         help='要提取的目标元素的类名')
+    parser.add_argument('--post-class', type=str, 
+                        default='post type-post status-publish format-standard has-post-thumbnail hentry category-media-2 tag-content-2 tag-embeds-2 tag-media tag-twitter-2',
+                        help='包含封面图片的文章元素类名')
     parser.add_argument('--output-dir', type=str, default='./content/post', 
                         help='输出文件的目录')
     parser.add_argument('--no-front-matter', action='store_true', 
@@ -526,16 +600,24 @@ def main():
     # 配置选项
     config = {
         'target_class': args.target_class,
+        'post_class': args.post_class,
         'output_dir': args.output_dir,
         'add_front_matter': not args.no_front_matter,
         'timeout': args.timeout,
-        'encoding': 'utf-8'  # 添加缺失的编码设置
+        'encoding': 'utf-8'
     }
     
     analyzer = WebPageAnalyzer(args.url, config)
     if analyzer.fetch_page():
         title = analyzer.get_title().strip()
         print(f"原始页面标题: {title}")
+        
+        # 获取封面图片
+        cover_image = analyzer.get_cover_image()
+        if cover_image:
+            print(f"找到封面图片: {cover_image}")
+        else:
+            print("未找到封面图片")
         
         # 处理标题
         title = analyzer.replace_keywords(title)
@@ -560,8 +642,8 @@ def main():
             element_md = analyzer.get_element_markdown(first_element)
             
             if element_md:
-                # 保存Markdown到文件
-                if analyzer.save_markdown_to_file(element_md, output_file):
+                # 保存Markdown到文件，传入封面图片
+                if analyzer.save_markdown_to_file(element_md, output_file, cover_image):
                     print(f"已将第一个匹配元素的Markdown内容保存到 {output_file}")
                     
                     # 显示保存的内容预览（包括前置元数据）
