@@ -234,6 +234,18 @@ related:
         - name: categories
           weight: 200
 
+sitemap:
+  changeFreq: ""
+  disable: false
+  filename: sitemap.xml
+  priority: -1
+
+outputFormats:
+    rss:
+        mediatype: "application/rss+xml"
+        baseName: "atom"
+        
+
 markup:
     goldmark:
         extensions:
